@@ -35,6 +35,8 @@ public class Example {
         return "Name: " + name + ". Val: " + calls;
     }
 
+    // Similarly, we can override compareTo() and equals() for use in our own objects
+
     public static void main(String[] args) {
 
         // Creates two new objects "foo" and "bar"
