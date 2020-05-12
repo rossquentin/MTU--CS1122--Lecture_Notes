@@ -35,6 +35,8 @@ public class Example {
         return "Name: " + name + ". Val: " + calls;
     }
 
+    // Similarly, we can override compareTo() and equals() for use in our own objects
+
     public boolean equals(Object obj) {
         // Check if object obj is an Example object
         // If not, return false
@@ -49,13 +51,17 @@ public class Example {
          return (tmp.check() == calls);
     }
 
-    // Similarly, we can override compareTo() and equals() for use in our own objects
+    // Compare value of two calls, return positive if first is greater than second and vice versa. return 0 if same.
+    public int compareTo(Example ex) {
+        return calls - ex.calls;
+    }
 
     public static void main(String[] args) {
 
         // Creates two new objects "foo" and "bar"
         Example foo = new Example("foo", 10);
         Example bar = new Example("bar", 9);
+        Example foobar = null;
 
         // Call foo four times
 //        for (int i = 0; i < 4; i++) {
@@ -66,6 +72,22 @@ public class Example {
 //        System.out.println(foo);
 //        System.out.println(bar.toString());
 
-        System.out.println(foo.equals(bar));
+        // Compares and prints foo's and bar's number of calls
+        if (foo.compareTo(bar) < 0) {
+            System.out.println("foo is smaller than bar.");
+        }
+        else if (foo.compareTo(bar) > 0) {
+            System.out.println("foo is larger than bar.");
+        }
+        else {
+            System.out.println("foo and bar have the same calls.");
+        }
+
+        // Checks if foobar is initialized
+        if (foobar == null) {
+            System.out.println("Foobar is null: " + foobar);
+        }
+
+        System.out.println("Is foo equal to bar? " + foo.equals(bar));
     }
 }
