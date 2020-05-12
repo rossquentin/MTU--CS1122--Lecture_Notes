@@ -45,7 +45,5 @@ public class Example {
         // Print both foo and bar for testing
         System.out.println(foo.getName() + ": " + foo.check());
         System.out.println(bar.getName() + ": " + bar.check());
-
     }
-
 }
