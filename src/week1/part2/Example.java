@@ -29,6 +29,12 @@ public class Example {
         return name;
     }
 
+    // Overrides the toString method and, if no other method is called, calls this method.
+    // If this is not called and the object is called without any method, it will return memory location.
+    public String toString() {
+        return "Name: " + name + ". Val: " + calls;
+    }
+
     public static void main(String[] args) {
 
         // Creates two new objects "foo" and "bar"
@@ -43,7 +49,7 @@ public class Example {
         }
 
         // Print both foo and bar for testing
-        System.out.println(foo.getName() + ": " + foo.check());
-        System.out.println(bar.getName() + ": " + bar.check());
+        System.out.println(foo);
+        System.out.println(bar.toString());
     }
 }
