@@ -53,5 +53,6 @@ public class Example {
         // Print both foo and bar for testing
         System.out.println(foo);
         System.out.println(bar.toString());
+
     }
 }
