@@ -35,24 +35,37 @@ public class Example {
         return "Name: " + name + ". Val: " + calls;
     }
 
+    public boolean equals(Object obj) {
+        // Check if object obj is an Example object
+        // If not, return false
+         if(! (obj instanceof Example)) {
+             return false;
+         }
+
+         // Cast obj as an Example object
+         Example tmp = (Example) obj;
+
+         // Checks if temporary object has the same number of calls
+         return (tmp.check() == calls);
+    }
+
     // Similarly, we can override compareTo() and equals() for use in our own objects
 
     public static void main(String[] args) {
 
         // Creates two new objects "foo" and "bar"
         Example foo = new Example("foo", 10);
-        Example bar = new Example("bar", 10);
-
-        Example stuff = new Example("place", 11);
+        Example bar = new Example("bar", 9);
 
         // Call foo four times
-        for (int i = 0; i < 4; i++) {
-            foo.call();
-        }
+//        for (int i = 0; i < 4; i++) {
+//            foo.call();
+//        }
+//
+//        // Print both foo and bar for testing
+//        System.out.println(foo);
+//        System.out.println(bar.toString());
 
-        // Print both foo and bar for testing
-        System.out.println(foo);
-        System.out.println(bar.toString());
-
+        System.out.println(foo.equals(bar));
     }
 }
