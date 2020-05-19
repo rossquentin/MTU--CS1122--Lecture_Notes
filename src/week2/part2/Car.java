@@ -1,5 +1,7 @@
 package week2.part2;
 
+import week2.part2.Vehicle;
+
 public class Car extends Vehicle {
 
     private int seatCount;
