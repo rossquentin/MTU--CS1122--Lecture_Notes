@@ -20,11 +20,31 @@ public class Car extends Vehicle {
         seatCount = numSeats;
     }
 
-    public int numSeats() {
-        return 0;
+    /**
+     * Method is not defined in superclass Vehicle
+     * Change the seat cunt in the vehicle
+     *
+     * @param numSeats  New seat count
+     */
+    public void setSeats(int numSeats) {
+        seatCount = numSeats;
     }
 
+    /**
+     * Returns the number of seats
+     *
+     * @return  Number of seats
+     */
+    public int numSeats() {
+        return seatCount;
+    }
+
+    /**
+     * Returns the fact I'm a car
+     *
+     * @return the string "car"
+     */
     public String getType() {
-        return null;
+        return "car";
     }
 }
