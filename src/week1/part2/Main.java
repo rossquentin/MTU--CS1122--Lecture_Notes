@@ -1,6 +1,7 @@
 package week1.part2;
 
 import week2.part2.*;
+import java.lang.UnsupportedOperationException;
 
 public class Main {
 
@@ -16,6 +17,7 @@ public class Main {
 
         System.out.println(car.toString());
         System.out.println(unicycle.toString());
+        // throw new UnsupportedOperationException();
 
     }
 }
