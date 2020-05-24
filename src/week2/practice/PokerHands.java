@@ -3,11 +3,22 @@ package week2.practice;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * Sorts a series of different poker hands by best to worst.
+ *
+ * @author Quentin Ross
+ */
 public class PokerHands implements Comparable{
 
     private int handRank;
     private String handName;
 
+
+    /**
+     * Constructor to set name and value of a poker hand
+     *
+     * @param hand  Name of the poker hand
+     */
     public PokerHands(String hand) {
         this.handName = hand;
 
@@ -42,16 +53,28 @@ public class PokerHands implements Comparable{
             case "high card" :
                 handRank = 10;
                 break;
+            default:
+                handRank = -1;
+                break;
         }
     }
 
+    /**
+     * Compares two objects bases on the name and value of the poker hands given
+     *
+     * @param o     Object given
+     * @return      Value to sort the hands in.
+     */
     public int compareTo(Object o) throws NullPointerException, ClassCastException{
         if (o == null) {
             throw new NullPointerException();
         }
         if (o instanceof PokerHands) {
             PokerHands temp = (PokerHands) o;
-            if (!this.handName.equals(temp.handName)) {
+            if (temp.handRank == -1) {
+                throw new NullPointerException("Hand does not exist.");
+            }
+            else if (!this.handName.equals(temp.handName)) {
                 return this.handRank - temp.handRank;
             }
             return 0;
@@ -59,11 +82,18 @@ public class PokerHands implements Comparable{
         throw new ClassCastException();
     }
 
-
+    /**
+     * toString method to format the ArrayList when printing to the console.
+     *
+     * @return  The handName string.
+     */
     public String toString() {
         return handName;
     }
 
+    /**
+     * Main method to test the program.
+     */
     public static void main(String[] args) {
         ArrayList<PokerHands> hands = new ArrayList<>();
         hands.add(new PokerHands("Full House"));
