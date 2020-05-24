@@ -1,4 +1,4 @@
-package week1.part2;
+package week2.part2;
 
 import week2.part2.Vehicle;
 

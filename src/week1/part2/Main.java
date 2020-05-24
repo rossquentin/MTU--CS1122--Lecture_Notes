@@ -1,7 +1,6 @@
 package week1.part2;
 
 import week2.part2.*;
-import java.lang.UnsupportedOperationException;
 
 public class Main {
 
