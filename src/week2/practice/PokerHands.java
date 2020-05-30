@@ -1,5 +1,7 @@
 package week2.practice;
 
+import jdk.jshell.spi.ExecutionControl;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -71,8 +73,8 @@ public class PokerHands implements Comparable{
         }
         if (o instanceof PokerHands) {
             PokerHands temp = (PokerHands) o;
-            if (temp.handRank == -1) {
-                throw new NullPointerException("Hand does not exist.");
+            if (this.handRank == -1) {
+                throw new IllegalArgumentException("Hand does not exist: \"" + this.handName + "\"");
             }
             else if (!this.handName.equals(temp.handName)) {
                 return this.handRank - temp.handRank;
@@ -103,6 +105,9 @@ public class PokerHands implements Comparable{
         hands.add(new PokerHands("High Card"));
         hands.add(new PokerHands("Flush"));
         hands.add(new PokerHands("Royal Flush"));
+        hands.add(new PokerHands("Pair"));
+        hands.add(new PokerHands("Two Pair"));
+        //hands.add(new PokerHands("aa"));
 
         Collections.shuffle(hands);
 
